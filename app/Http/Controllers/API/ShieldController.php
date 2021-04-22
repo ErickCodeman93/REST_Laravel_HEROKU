@@ -72,7 +72,7 @@ class ShieldController extends Controller
                     'http_errors' => true,	//add this to return errors in json
                 ] );
                     
-                dd(  $response -> getBody() );
+                dd( $response );
                 // $auth = $this -> checkOauth( ( string ) $response -> getBody() );
 
                 // dd( $response );
