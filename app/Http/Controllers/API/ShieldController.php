@@ -46,8 +46,8 @@ class ShieldController extends Controller
                 // $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
                 // [   
                 //     'grant_type' => 'password',
-                //     'client_id' => self :: CLIENT_ID,
-                //     'client_secret' => self :: CLIENT_SECRET,
+                //     'client_id' => env('CLIENT_ID'),
+                //     'client_secret' => env('CLIENT_SECRET'),
                 //     'username' => $data -> email,
                 //     'password' => $data -> password,
                 //     'scope' => '*',
@@ -62,8 +62,8 @@ class ShieldController extends Controller
     
                 $response = $http -> post( '/oauth/token', [
                     'form_params' => [
-                        'client_id' => self :: CLIENT_ID,
-                        'client_secret' => self :: CLIENT_SECRET,
+                        'client_id' => env('CLIENT_ID'),
+                        'client_secret' => env('CLIENT_SECRET'),
                         'grant_type' => 'password',
                         'password' => $request -> password,
                         'scope' => '*',
