@@ -14,7 +14,7 @@ class ShieldController extends Controller
 
     private const CLIENT_ID = 2;
 	
-	private const CLIENT_SECRET = 'G7M77DeHN7ooVHyIu23tIoURI0iJW9oywyg4On1W';
+	private const CLIENT_SECRET = '12Cs9e8zcEeDJhxTm7LVtt7v28mboDrZTSEd9mlI';
     
     /**
      * Display a listing of the resource.
@@ -43,34 +43,34 @@ class ShieldController extends Controller
 
             if( $userExist ){
     
-                // $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
-                // [   
-                //     'grant_type' => 'password',
-                //     'client_id' => self :: CLIENT_ID,
-                //     'client_secret' => self :: CLIENT_SECRET,
-                //     'username' => $data -> email,
-                //     'password' => $data -> password,
-                //     'scope' => '*',
-                // ] );
+                $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
+                [   
+                    'grant_type' => 'password',
+                    'client_id' => self :: CLIENT_ID,
+                    'client_secret' => self :: CLIENT_SECRET,
+                    'username' => $data -> email,
+                    'password' => $data -> password,
+                    'scope' => '*',
+                ] );
 
-                $http = new GuzzleHttp\Client( [
-                    'base_uri' => env( 'APP_URL' ),
-                    'defaults' => [
-                        'exceptions' => false,
-                    ],
-                ] );
+                // $http = new GuzzleHttp\Client( [
+                //     'base_uri' => env( 'APP_URL' ),
+                //     'defaults' => [
+                //         'exceptions' => false,
+                //     ],
+                // ] );
     
-                $response = $http -> post( '/oauth/token', [
-                    'form_params' => [
-                        'client_id' => self :: CLIENT_ID,
-                        'client_secret' => self :: CLIENT_SECRET,
-                        'grant_type' => 'password',
-                        'password' => $request -> password,
-                        'scope' => '*',
-                        'username' => $request -> email,
-                    ],
-                    'http_errors' => true,	//add this to return errors in json
-                ] );
+                // $response = $http -> post( '/oauth/token', [
+                //     'form_params' => [
+                //         'client_id' => self :: CLIENT_ID,
+                //         'client_secret' => self :: CLIENT_SECRET,
+                //         'grant_type' => 'password',
+                //         'password' => $request -> password,
+                //         'scope' => '*',
+                //         'username' => $request -> email,
+                //     ],
+                //     'http_errors' => true,	//add this to return errors in json
+                // ] );
                     
                 dd( $response );
                 // $auth = $this -> checkOauth( ( string ) $response -> getBody() );
