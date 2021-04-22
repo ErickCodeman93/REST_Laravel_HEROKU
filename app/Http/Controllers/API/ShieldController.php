@@ -14,7 +14,7 @@ class ShieldController extends Controller
 
     private const CLIENT_ID = 2;
 	
-	private const CLIENT_SECRET = 'iqTo9sLoLMyTQvDvbUATX0Mc7qggYHYxxjVFLT8h';
+	private const CLIENT_SECRET = 'IZmxeiBSisE04Skt9qNchQ6atR1g0ftP45hSlSKN';
     
     /**
      * Display a listing of the resource.
@@ -43,7 +43,7 @@ class ShieldController extends Controller
 
             if( $userExist ){
     
-                $response = Http::asForm()->post( 'http://127.0.0.1:8001/oauth/token', 
+                $response = Http::asForm()->post( '/oauth/token', 
                 [
                     'grant_type' => 'password',
                     'client_id' => self :: CLIENT_ID,
