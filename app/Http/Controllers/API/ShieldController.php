@@ -69,10 +69,10 @@ class ShieldController extends Controller
                         'scope' => '*',
                         'username' => $request -> email,
                     ],
-                    'http_errors' => false,	//add this to return errors in json
+                    'http_errors' => true,	//add this to return errors in json
                 ] );
                     
-                dd( $response );
+                dd(  $response -> getBody() );
                 // $auth = $this -> checkOauth( ( string ) $response -> getBody() );
 
                 // dd( $response );
