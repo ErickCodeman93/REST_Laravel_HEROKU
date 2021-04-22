@@ -43,17 +43,39 @@ class ShieldController extends Controller
 
             if( $userExist ){
     
-                $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
-                [   
-                    'grant_type' => 'password',
-                    'client_id' => self :: CLIENT_ID,
-                    'client_secret' => self :: CLIENT_SECRET,
-                    'username' => $data -> email,
-                    'password' => $data -> password,
-                    'scope' => '*',
-                ] );
+                // $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
+                // [   
+                //     'grant_type' => 'password',
+                //     'client_id' => self :: CLIENT_ID,
+                //     'client_secret' => self :: CLIENT_SECRET,
+                //     'username' => $data -> email,
+                //     'password' => $data -> password,
+                //     'scope' => '*',
+                // ] );
 
+                $http = new GuzzleHttp\Client( [
+                    'base_uri' => env( 'APP_URL' ),
+                    'defaults' => [
+                        'exceptions' => false,
+                    ],
+                ] );
+    
+                $response = $http -> post( '/oauth/token', [
+                    'form_params' => [
+                        'client_id' => self :: CLIENT_ID,
+                        'client_secret' => self :: CLIENT_SECRET,
+                        'grant_type' => 'password',
+                        'password' => $request -> password,
+                        'scope' => '*',
+                        'username' => $request -> email,
+                    ],
+                    'http_errors' => false,	//add this to return errors in json
+                ] );
+                    
                 dd( $response );
+                // $auth = $this -> checkOauth( ( string ) $response -> getBody() );
+
+                // dd( $response );
      
                 $output = [
                     'status' => 200, 
