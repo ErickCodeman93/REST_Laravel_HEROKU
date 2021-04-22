@@ -66,9 +66,7 @@
         "post-install-cmd": [
             "php artisan clear-compiled",
             "chmod -R 777 public/",
-            "chmod -R 777 storage/",
-            "chgrp -R www-data storage bootstrap/cache",
-            "chmod -R ug+rwx storage bootstrap/cache"
+            "chmod -R 777 storage/"
         ]
     }
 }
