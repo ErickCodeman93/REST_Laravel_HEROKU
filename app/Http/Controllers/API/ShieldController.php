@@ -52,6 +52,8 @@ class ShieldController extends Controller
                     'password' => $data -> password,
                     'scope' => '*',
                 ] );
+
+                dd( $response );
      
                 $output = [
                     'status' => 200, 
