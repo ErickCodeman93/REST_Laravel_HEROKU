@@ -43,7 +43,7 @@ class ShieldController extends Controller
 
             if( $userExist ){
     
-                $response = Http::asForm()->post( env('APP_URL').'oauth/token', 
+                $response = Http::asForm()->post( env('APP_URL').'/oauth/token', 
                 [   
                     'grant_type' => 'password',
                     'client_id' => self :: CLIENT_ID,
