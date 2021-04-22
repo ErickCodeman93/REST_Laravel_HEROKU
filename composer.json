@@ -66,11 +66,7 @@
         "post-install-cmd": [
             "php artisan clear-compiled",
             "chmod -R 777 public/",
-            "chmod -R 777 storage/",
-            "composer require laravel/passport",
-            "php artisan migrate:fresh --seed ",
-            "php artisan passport:keys",
-            "php artisan passport:install --force "
+            "chmod -R 777 storage/"
         ]
     }
 }

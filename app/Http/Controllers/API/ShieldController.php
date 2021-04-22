@@ -14,7 +14,7 @@ class ShieldController extends Controller
 
     private const CLIENT_ID = 2;
 	
-	private const CLIENT_SECRET = 'zR2oAnQlP8IBTtwSGXIAio5TUdJzEwAqHq0xnw7o';
+	private const CLIENT_SECRET = 'hG4ypaaR9OE3kPkt1IpigNV74ytzXbEuWpDzwmbV';
     
     /**
      * Display a listing of the resource.
