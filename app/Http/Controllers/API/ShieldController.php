@@ -53,7 +53,7 @@ class ShieldController extends Controller
                     'scope' => '*',
                 ] );
 
-                dd( ( string ) $response -> getBody() );
+                dd( $response -> getBody() );
      
                 $output = [
                     'status' => 200, 
